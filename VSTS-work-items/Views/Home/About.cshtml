@@ -1,0 +1,17 @@
+﻿@model List<VSTS_work_items.Models.DetailsViewModel>
+
+@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>Use this area to provide additional information.</p>
+
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.Name - @item.ReferenceName</li>
+    }
+</ul>

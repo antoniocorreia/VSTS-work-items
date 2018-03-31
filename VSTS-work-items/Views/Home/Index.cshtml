@@ -1,0 +1,22 @@
+﻿@model List<VSTS_work_items.Models.WorkItemViewModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+
+        @foreach (var project in Model.GroupBy(x => x.Project))
+        {
+            <h2>@project.Key</h2>
+            <ul>
+                @foreach (var item in project)
+                {
+                    <li>@item.Id - @item.Title (@item.State) => @item.Type</li>
+                }
+            </ul>
+
+        }
+
+    </div>
+</div>
